@@ -1,0 +1,16 @@
+<div class="container">
+  <h1>Welcome to the index of Lists</h1>
+
+  <ul>
+    <% @lists.each do |list| %>
+      <li>
+        <p>
+          <%= link_to list.name, list_path(list.id) %>
+        </p>
+      </li>
+    <% end %>
+  </ul>
+
+  <%= link_to "Create new list", new_list_path %>
+</div>
+
