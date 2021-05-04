@@ -8,6 +8,8 @@ ruby '2.6.6'
 gem 'autoprefixer-rails'
 gem 'font-awesome-sass', '~> 5.12.0'
 gem 'simple_form'
+# Cloud serivce that hosts Images and vidoes
+gem 'cloudinary', '~> 1.16.0'
 # gem for security to hide my API key- store in the .env file
 gem 'dotenv-rails', groups: [:development, :test]
 
