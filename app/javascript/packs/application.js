@@ -21,3 +21,9 @@ import { initSelect2 } from './plugins/init_select2';
 document.addEventListener("turbolinks:load", function() {
   initSelect2();
 });
+
+import { loadDynamicBannerText } from './plugins/init_typed';
+
+document.addEventListener('turbolinks:load', () => {
+  loadDynamicBannerText();
+});
