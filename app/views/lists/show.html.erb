@@ -23,10 +23,10 @@
     <div>
       <%= link_to 'add a movie', new_list_bookmark_path(@list), class: 'btn btn-flat' %>
 
-      <!-- <button id ="sweet-alert-demo" class="btn btn-danger">Delete <%= @list.name %></button>
-      <%= link_to "delete this list", list_path(@list), method: :delete, id: "delete-link", class: "hidden" %> -->
+       <button id ="sweet-alert-demo" class="btn btn-danger">Delete <%= @list.name %></button>
+      <%= link_to "delete this list", list_path(@list), method: :delete, id: "delete-link", class: "hidden" %>
 
-     <%= link_to 'detete this list', list_path(@list), method: :delete, class: 'btn btn-cancel', data: { confirm: 'Using SweetAlert would be better?' } %>
+     <%#= link_to 'detete this list', list_path(@list), method: :delete, class: 'btn btn-cancel', data: { confirm: 'Using SweetAlert would be better?' } %>
     </div>
   </div>
   <div class="row my-2">
@@ -78,8 +78,10 @@
       </div>
     </div>
   </div>
-    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path @list.photo.key, height: 300, crop: :fill %>')">
-    Image upload
-    </div>
+    <%if @list.photo.attached? %>
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path @list.photo.key, height: 300, crop: :fill %>')">
+      Image upload
+      </div>
+    <% end %>
 </div>
 
