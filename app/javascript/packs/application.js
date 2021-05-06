@@ -29,15 +29,22 @@ document.addEventListener('turbolinks:load', () => {
 });
 
 
-import { initSweetalert } from './plugins/init_sweetalert';
+// import { initSweetalert } from './plugins/init_sweetalert';
 
-initSweetalert('#sweet-alert-demo', {
-  title: "Are you sure?",
-  text: "This action cannot be reversed",
-  icon: "warning"
-}, (value) => {
-  if (value) {
-    const link = document.querySelector('#delete-link');
-    link.click();
-  }
+// initSweetalert('#sweet-alert-demo', {
+//   title: "Are you sure?",
+//   text: "This action cannot be reversed",
+//   icon: "warning"
+// }, (value) => {
+//   if (value) {
+//     const link = document.querySelector('#delete-link');
+//     link.click();
+//   }
+// });
+
+import { initializeAos } from './plugins/init_aos';
+
+document.addEventListener('turbolinks:load', () => {
+  initializeAos();
 });
+
