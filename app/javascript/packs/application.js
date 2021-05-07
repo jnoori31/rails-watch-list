@@ -16,16 +16,23 @@ require("channels")
 //
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
-import { initSelect2 } from './plugins/init_select2';
 
+// import 'select2/dist/css/select2.min.css'
+// import 'aos/dist/aos.css';
+
+import 'jquery-bar-rating/dist/themes/css-stars';
+
+import { initSelect2 } from './plugins/init_select2';
 import { loadDynamicBannerText } from './plugins/init_typed';
 import { initializeAos } from './plugins/init_aos';
 import { initSweetalert } from './plugins/init_sweetalert';
+import { initStarRating } from './plugins/init_star_rating';
 
 document.addEventListener('turbolinks:load', () => {
-  // loadDynamicBannerText();
+   // loadDynamicBannerText();
   initializeAos();
   initSelect2();
+  initStarRating();
   initSweetalert('#sweet-alert-demo', {
     title: "Are you sure?",
     text: "This action cannot be reversed",
@@ -37,3 +44,8 @@ document.addEventListener('turbolinks:load', () => {
     }
   });
 });
+
+// Review save and rating does not work with loadDynnamic but sweetalerts does
+// loadDynamic typed js works but not review with stars
+// import jquery review works with stars && select2 but not typed.js
+

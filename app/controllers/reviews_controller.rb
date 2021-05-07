@@ -3,23 +3,24 @@ class ReviewsController < ApplicationController
   #   @list = current_list
   #   @review = Review.new
   # end
-
-  def create
+def create
     @review = Review.new(review_params)
     @list = List.find(params[:list_id])
     @review.list = @list
     if @review.save
       redirect_to list_path(@list)
     else
-      render 'list/show'
+      render 'lists/show'
     end
   end
 
   def destroy
-    @review = Review.find(params{:id})
+    @review = Review.find(params[:id])
     @review.destroy
     redirect_to list_path(@review.list)
   end
+
+  private
 
   def review_params
     params.require(:review).permit(:comment, :rating)
