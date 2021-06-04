@@ -17,9 +17,8 @@ require("channels")
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
 
-// import 'select2/dist/css/select2.min.css'
-// import 'aos/dist/aos.css';
-
+import 'select2/dist/css/select2.min.css'
+import 'aos/dist/aos.css';
 import 'jquery-bar-rating/dist/themes/css-stars';
 
 import { initSelect2 } from './plugins/init_select2';
@@ -29,7 +28,7 @@ import { initSweetalert } from './plugins/init_sweetalert';
 import { initStarRating } from './plugins/init_star_rating';
 
 document.addEventListener('turbolinks:load', () => {
-   // loadDynamicBannerText();
+  loadDynamicBannerText();
   initializeAos();
   initSelect2();
   initStarRating();
